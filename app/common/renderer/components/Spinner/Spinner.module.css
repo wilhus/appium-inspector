@@ -13,6 +13,16 @@
   width: 1em;
   height: 4em;
 }
+
+:global(.dark-theme) .loader,
+:global(.dark-theme) .loader:before,
+:global(.dark-theme) .loader:after {
+  background: #bbb;
+}
+
+:global(.dark-theme) .loader {
+  color: #bbb;
+}
 .loader {
   color: #555;
   text-indent: -9999em;

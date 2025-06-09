@@ -1,5 +1,5 @@
 import {LinkOutlined} from '@ant-design/icons';
-import {Badge, Button, Spin, Tabs} from 'antd';
+import {Badge, Button, Layout, Spin, Tabs} from 'antd';
 import _ from 'lodash';
 import {useEffect} from 'react';
 import {useNavigate} from 'react-router';
@@ -21,6 +21,7 @@ import CloudProviderSelector from './CloudProviderSelector.jsx';
 import SavedSessions from './SavedSessions.jsx';
 import ServerTabCustom from './ServerTabCustom.jsx';
 import SessionStyles from './Session.module.css';
+import ToggleTheme from './ToggleTheme.jsx';
 
 const Session = (props) => {
   const {
@@ -96,8 +97,8 @@ const Session = (props) => {
 
   return [
     <Spin spinning={!!newSessionLoading} key="main">
-      <div className={SessionStyles.sessionContainer}>
-        <div id="serverTypeTabs" className={SessionStyles.serverTab}>
+      <Layout className={SessionStyles.sessionContainer}>
+        <div className={SessionStyles.sessionHeader}>
           <Tabs
             activeKey={serverType}
             onChange={(tab) => handleSelectServerTab(tab)}
@@ -125,8 +126,9 @@ const Session = (props) => {
               },
             ]}
           />
-          <AdvancedServerParams {...props} />
+          <ToggleTheme {...props} />
         </div>
+        <AdvancedServerParams {...props} />
 
         <Tabs
           activeKey={tabKey}
@@ -203,7 +205,7 @@ const Session = (props) => {
             </Button>
           )}
         </div>
-      </div>
+      </Layout>
     </Spin>,
     <CloudProviderSelector {...props} key="CloudProviderSelector" />,
   ];

@@ -12,7 +12,7 @@ import {
   TagOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons';
-import {Button, Card, Modal, Space, Spin, Switch, Tabs, Tooltip} from 'antd';
+import {Button, Card, Layout, Modal, Space, Spin, Switch, Tabs, Tooltip} from 'antd';
 import _ from 'lodash';
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate} from 'react-router';
@@ -424,7 +424,7 @@ const Inspector = (props) => {
   );
 
   return (
-    <div className={InspectorStyles['inspector-container']}>
+    <Layout className={InspectorStyles['inspector-container']}>
       <HeaderButtons quitCurrentSession={quitCurrentSession} {...props} />
       {main}
       <Modal
@@ -447,7 +447,7 @@ const Inspector = (props) => {
           <code>{visibleCommandResult}</code>
         </pre>
       </Modal>
-    </div>
+    </Layout>
   );
 };
 

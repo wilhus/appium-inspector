@@ -7,7 +7,6 @@
   width: 100%;
   height: 100%;
   padding: 1em;
-  background: linear-gradient(180deg, #f9f9f9, #f2f2f2, 5%, #f2f2f2, 95%, #d9d9d9);
   display: flex;
   flex-flow: column;
 }
@@ -38,6 +37,12 @@
 .cloudProviderModal :global(.ant-modal-body button img) {
   height: 100%;
 }
+
+.sessionHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sessionFooter {
   text-align: right;
   height: 30px;
@@ -58,6 +63,7 @@
 
 .serverTabs {
   padding-bottom: 8px;
+  flex: 1;
 }
 
 .serverTabs :global(.ant-tabs-bar) {
@@ -110,7 +116,7 @@
 }
 
 :global(.ant-badge-count) {
-  background-color: #1890ff;
+  background-color: #1890ff !important;
 }
 
 .savedSessions,
@@ -227,6 +233,10 @@
 
 .selected {
   background-color: #d6e8ff;
+}
+
+:global(.dark-theme) .selected {
+  background-color: #0050b3;
 }
 
 .capsNameEditorButton {
