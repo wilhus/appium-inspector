@@ -8,6 +8,8 @@ import {ALERT} from '../../constants/antd-types.js';
 import {loadHighlightTheme} from '../../utils/highlight-theme.js';
 import SessionStyles from './Session.module.css';
 
+const {TextArea} = Input;
+
 const FormattedCaps = (props) => {
   const {
     caps,
@@ -131,7 +133,7 @@ const FormattedCaps = (props) => {
         </div>
         {isEditingDesiredCaps && (
           <div className={SessionStyles.capsEditor}>
-            <textarea
+            <TextArea
               onChange={(e) => setRawDesiredCaps(e.target.value)}
               value={rawDesiredCaps}
               className={`${SessionStyles.capsEditorBody} ${
