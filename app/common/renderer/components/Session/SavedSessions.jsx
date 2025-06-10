@@ -112,7 +112,12 @@ const SavedSessions = (props) => {
           dataSource={dataSource(savedSessions, t)}
           columns={columns}
           onRow={(row) => ({onClick: () => handleCapsAndServer(row.key)})}
-          rowClassName={(row) => (capsUUID === row.key ? SessionStyles.selected : '')}
+          rowSelection={{
+            selectedRowKeys: [capsUUID],
+            hideSelectAll: true,
+            columnWidth: 0,
+            renderCell: () => null,
+          }}
         />
       </Col>
       <Col span={12} className={SessionStyles.capsFormattedCol}>

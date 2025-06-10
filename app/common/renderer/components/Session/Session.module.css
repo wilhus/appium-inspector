@@ -231,14 +231,6 @@
   padding: 6px 8px 0 8px;
 }
 
-.selected {
-  background-color: #d6e8ff;
-}
-
-:global(.dark-theme) .selected {
-  background-color: #0050b3;
-}
-
 .capsNameEditorButton {
   margin: 0 8px 0 0;
   padding: 0;
