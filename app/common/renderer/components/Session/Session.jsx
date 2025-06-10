@@ -1,5 +1,5 @@
 import {LinkOutlined} from '@ant-design/icons';
-import {Badge, Button, Layout, Spin, Tabs} from 'antd';
+import {Badge, Button, Spin, Tabs} from 'antd';
 import _ from 'lodash';
 import {useEffect} from 'react';
 import {useNavigate} from 'react-router';
@@ -97,7 +97,7 @@ const Session = (props) => {
 
   return [
     <Spin spinning={!!newSessionLoading} key="main">
-      <Layout className={SessionStyles.sessionContainer}>
+      <div className={SessionStyles.sessionContainer}>
         <div className={SessionStyles.sessionHeader}>
           <Tabs
             activeKey={serverType}
@@ -205,7 +205,7 @@ const Session = (props) => {
             </Button>
           )}
         </div>
-      </Layout>
+      </div>
     </Spin>,
     <CloudProviderSelector {...props} key="CloudProviderSelector" />,
   ];
