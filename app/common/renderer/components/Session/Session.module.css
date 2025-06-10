@@ -154,10 +154,16 @@
   padding-left: 12px;
 }
 
+.savedCaps,
 .formattedCaps,
 .formattedCapsBody {
   height: 100%;
 }
+
+.savedCaps :global(.ant-card-body) {
+  padding: 0;
+}
+
 .formattedCaps :global(.ant-row) {
   width: 100%;
 }
