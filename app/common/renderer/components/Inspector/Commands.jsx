@@ -1,15 +1,4 @@
-import {
-  Alert,
-  Button,
-  Col,
-  Collapse,
-  Input,
-  Modal,
-  Row,
-  Space,
-  Switch,
-  Tooltip,
-} from 'antd';
+import {Alert, Button, Col, Collapse, Input, Modal, Row, Space, Switch, Tooltip} from 'antd';
 import _ from 'lodash';
 
 import {ALERT, INPUT} from '../../constants/antd-types';
