@@ -162,7 +162,7 @@ const Session = (props) => {
           ]}
         />
 
-        <Divider />
+        <Divider size='middle' />
 
         <div className={SessionStyles.sessionFooter}>
           <div className={SessionStyles.desiredCapsLink}>
