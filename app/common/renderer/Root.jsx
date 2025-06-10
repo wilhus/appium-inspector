@@ -7,6 +7,7 @@ import Spinner from './components/Spinner/Spinner.jsx';
 import InspectorPage from './containers/InspectorPage';
 import SessionPage from './containers/SessionPage';
 import i18n from './i18next';
+import NotificationHandler from './NotificationHandler';
 import {ipcRenderer} from './polyfills';
 import RootStyles from './Root.module.css';
 
@@ -33,7 +34,8 @@ const AppContent = () => {
 
   return (
     <ConfigProvider theme={getTheme(isDarkMode)}>
-      <App>
+      <App notification={{maxCount: 1}}>
+        <NotificationHandler />
         <Layout className={RootStyles.appLayout}>
           <MemoryRouter initialEntries={['/']}>
             <Suspense fallback={<Spinner />}>

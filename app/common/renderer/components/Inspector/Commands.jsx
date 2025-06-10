@@ -5,7 +5,6 @@ import {
   Collapse,
   Input,
   Modal,
-  notification,
   Row,
   Space,
   Switch,
@@ -15,6 +14,7 @@ import _ from 'lodash';
 
 import {ALERT, INPUT} from '../../constants/antd-types';
 import {COMMAND_ARG_TYPES, COMMAND_DEFINITIONS, TOP_LEVEL_COMMANDS} from '../../constants/commands';
+import {notification} from '../../utils/notification';
 import InspectorStyles from './Inspector.module.css';
 
 const Commands = (props) => {
