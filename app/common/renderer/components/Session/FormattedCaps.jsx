@@ -1,11 +1,9 @@
 import {CloseOutlined, EditOutlined, SaveOutlined} from '@ant-design/icons';
 import {Alert, Button, Card, Input, Row, Tooltip} from 'antd';
 import hljs from 'highlight.js';
-import {useSelector} from 'react-redux';
 
 import {getCapsObject} from '../../actions/Session.js';
 import {ALERT} from '../../constants/antd-types.js';
-import {loadHighlightTheme} from '../../utils/highlight-theme.js';
 import SessionStyles from './Session.module.css';
 
 const {TextArea} = Input;
@@ -27,9 +25,6 @@ const FormattedCaps = (props) => {
     isDuplicateCapsName,
     t,
   } = props;
-
-  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
-  loadHighlightTheme(isDarkMode);
 
   const getHighlightedCaps = (caps) => {
     const formattedJson = JSON.stringify(getCapsObject(caps), null, 2);

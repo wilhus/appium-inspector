@@ -10,6 +10,7 @@ import i18n from './i18next';
 import NotificationHandler from './NotificationHandler';
 import {ipcRenderer} from './polyfills';
 import RootStyles from './Root.module.css';
+import {loadHighlightTheme} from './utils/highlight-theme';
 
 ipcRenderer.on('appium-language-changed', (event, message) => {
   if (i18n.language !== message.language) {
@@ -31,6 +32,7 @@ const getTheme = (isDark) => ({
 
 const AppContent = () => {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  loadHighlightTheme(isDarkMode);
 
   return (
     <ConfigProvider theme={getTheme(isDarkMode)}>
