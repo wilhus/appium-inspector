@@ -115,7 +115,7 @@ const Source = (props) => {
   const elementMatchesSearch = (element, searchText) => {
     const lowerSearch = searchText.toLowerCase();
     return (
-      element.tagName?.toLowerCase().includes(lowerSearch) ||
+      element.tagName.toLowerCase().includes(lowerSearch) ||
       Object.entries(element.attributes).some(
         ([name, value]) =>
           name.toLowerCase().includes(lowerSearch) ||
