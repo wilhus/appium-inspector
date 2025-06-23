@@ -109,7 +109,7 @@ const Source = (props) => {
       elemObj,
       ...(elemObj.children?.flatMap(flattenSource) || []),
     ];
-    return flattenSource(sourceJSON);
+    return sourceJSON && flattenSource(sourceJSON);
   }, [sourceJSON]);
 
   const elementMatchesSearch = (element, searchText) => {
