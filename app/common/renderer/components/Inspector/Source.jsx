@@ -112,15 +112,10 @@ const Source = (props) => {
     return sourceJSON && flattenSource(sourceJSON);
   }, [sourceJSON]);
 
-  const elementMatchesSearch = (element, searchText) => {
-    const lowerSearch = searchText.toLowerCase();
-    return (
-      element.tagName.toLowerCase().includes(lowerSearch) ||
-      Object.entries(element.attributes).some(([name, value]) =>
-        (name + value).toLowerCase().includes(lowerSearch),
-      )
-    );
-  };
+  const elementMatchesSearch = (element, searchText) =>
+    (element.tagName + Object.entries(element.attributes).map(([name, value]) => name + value))
+      .toLowerCase()
+      .includes(searchText.toLowerCase());
 
   const onChange = (e) => {
     const {value} = e.target;
