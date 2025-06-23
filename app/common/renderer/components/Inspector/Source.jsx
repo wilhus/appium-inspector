@@ -116,10 +116,8 @@ const Source = (props) => {
     const lowerSearch = searchText.toLowerCase();
     return (
       element.tagName.toLowerCase().includes(lowerSearch) ||
-      Object.entries(element.attributes).some(
-        ([name, value]) =>
-          name.toLowerCase().includes(lowerSearch) ||
-          value.toString().toLowerCase().includes(lowerSearch),
+      Object.entries(element.attributes).some(([name, value]) =>
+        (name + value).toLowerCase().includes(lowerSearch),
       )
     );
   };
